@@ -20,7 +20,7 @@ public class PrincipalActivity extends AppCompatActivity {
         binding.fabAddMovie.setOnClickListener(v -> {
             Snackbar.make(binding.getRoot(), "Add a movie", Snackbar.LENGTH_SHORT).show();
         });
-        binding.tbPlayzoom.setTitle("Bienvenidos(as)");
+        binding.tbPlayzoom.setTitle("Bienvenido(a)");
         setSupportActionBar(binding.tbPlayzoom);
 
     }
