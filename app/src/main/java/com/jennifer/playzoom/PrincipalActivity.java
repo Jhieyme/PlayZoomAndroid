@@ -29,6 +29,7 @@ public class PrincipalActivity extends AppCompatActivity {
         setSupportActionBar(binding.tbPlayzoom);
         Intent getIntent = getIntent();
         email = getIntent.getStringExtra(EMAIL);
+        binding.txtEmail.setText(email);
     }
 
 
