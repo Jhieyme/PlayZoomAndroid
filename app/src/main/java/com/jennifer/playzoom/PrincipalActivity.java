@@ -3,6 +3,7 @@ package com.jennifer.playzoom;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,8 @@ import com.jennifer.playzoom.databinding.ActivityPrincipalBinding;
 public class PrincipalActivity extends AppCompatActivity {
 
     private ActivityPrincipalBinding binding;
+    public static String EMAIL = "EMAIL";
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,8 @@ public class PrincipalActivity extends AppCompatActivity {
             Snackbar.make(binding.getRoot(), "Add a movie", Snackbar.LENGTH_SHORT).show();
         });
         setSupportActionBar(binding.tbPlayzoom);
+        Intent getIntent = getIntent();
+        email = getIntent.getStringExtra(EMAIL);
     }
 
 
