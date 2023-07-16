@@ -43,7 +43,7 @@
         android:layout_marginHorizontal="42dp"
         android:layout_marginBottom="42dp"
         android:padding="16dp"
-        android:text="Get Started"
+        android:text="@string/boton_Started"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="16sp"

@@ -28,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         });
 
-        binding.txtMovie.setText("Mira tu pelicula \n " +
-                "favorita");
-
-
+        /*binding.txtMovie.setText("Mira tu pelicula \n " +
+                "favorita");*/
     }
 }

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Playzoom</string>
     <string name="get_started_title">Watch your favorite\n movie</string>
+    <string name="iniciar">Login</string>
+    <string name="boton_Started">Get Started</string>
+    <string name="email">Email</string>
+    <string name="passw">Password</string>
 </resources>

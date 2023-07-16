@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PrincipalActivity">
-    
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/apl_playzoom"
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_playzoom"
         android:layout_width="match_parent"
-        android:elevation="16dp"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/tb_playzoom"
-            android:layout_width="match_parent"
-            android:elevation="8dp"
-            app:title="Hola"
-            app:subtitle="mundo"
-            app:subtitleTextColor="@color/cardview_dark_background"
-            app:titleTextColor="@color/md_theme_dark_background"
-            android:background="@color/md_theme_dark_onPrimaryContainer"
-            android:layout_height="wrap_content">
-            
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+        android:layout_height="wrap_content"
+        android:background="@color/md_theme_dark_onPrimaryContainer"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitle="Pagina principal"
+        app:subtitleTextColor="@color/cardview_dark_background"
+        app:title="Pagina"
+        app:titleTextColor="@color/md_theme_dark_background">
+    </androidx.appcompat.widget.Toolbar>
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@null"
-        app:fabSize="normal"
-        android:src="@drawable/ic_add_movie"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:elevation="8dp"/>
+        android:contentDescription="@null"
+        android:src="@drawable/ic_add_movie"
+        app:elevation="8dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

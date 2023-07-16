@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Playzoom</string>
+    <string name="get_started_title">Mira tu pelicula\n favorita</string>
+    <string name="iniciar">Iniciar sesión</string>
+    <string name="boton_Started">Empezar</string>
+    <string name="email">Correo electrónico</string>
+    <string name="passw">Contraseña</string>
+
+</resources>
