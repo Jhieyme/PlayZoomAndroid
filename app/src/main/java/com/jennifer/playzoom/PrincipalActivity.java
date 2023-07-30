@@ -1,15 +1,16 @@
 package com.jennifer.playzoom;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.jennifer.playzoom.databinding.ActivityPrincipalBinding;
+import com.jennifer.playzoom.fragments.HomeFragment;
 
 public class PrincipalActivity extends AppCompatActivity {
 
@@ -23,10 +24,19 @@ public class PrincipalActivity extends AppCompatActivity {
         binding = ActivityPrincipalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.fabAddMovie.setOnClickListener(v -> {
-            Snackbar.make(binding.getRoot(), "Add a movie", Snackbar.LENGTH_SHORT).show();
-        });
         setSupportActionBar(binding.tbPlayzoom);
+        setSession();
+        addHomeFragment();
+    }
+
+    private void addHomeFragment() {
+        getSupportFragmentManager().
+                beginTransaction()
+                .add(binding.fcvMain.getId(), new HomeFragment()).commit();
+    }
+
+
+    private void setSession() {
         Intent getIntent = getIntent();
         email = getIntent.getStringExtra(EMAIL);
         binding.txtEmail.setText(email);
@@ -51,5 +61,4 @@ public class PrincipalActivity extends AppCompatActivity {
             return false;
         }
     }
-
 }

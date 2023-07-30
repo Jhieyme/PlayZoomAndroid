@@ -6,22 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".PrincipalActivity">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb_playzoom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/md_theme_dark_onPrimaryContainer"
+        android:background="?attr/colorPrimary"
         android:elevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:subtitle="Pagina principal"
-        app:subtitleTextColor="@color/cardview_dark_background"
-        app:title="Pagina"
-        app:titleTextColor="@color/md_theme_dark_background">
-    </androidx.appcompat.widget.Toolbar>
+        app:title="Principal"
+        app:subtitle="Pagina Principal"
+        app:subtitleTextColor="?attr/colorOnPrimary"
+        app:titleTextColor="?attr/colorOnPrimary"/>
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fcv_main"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_playzoom" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_movie"
@@ -40,8 +46,9 @@
         android:id="@+id/txt_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="jennifertorrespalomino@gmail.com"
+        android:text="qwerqwer@gmail.com"
         android:textAlignment="center"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cerrar sesion"
+        android:visibility="gone"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
