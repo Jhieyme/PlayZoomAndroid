@@ -4,10 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".fragments.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:id="@+id/txt_welcome"
         android:layout_width="0dp"
@@ -34,6 +32,7 @@
         app:layout_constraintTop_toBottomOf="@id/txt_welcome"/>
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
@@ -44,15 +43,38 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_movies_resume"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
         </LinearLayout>
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/button_with_icon"
+        android:layout_width="180dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:contentDescription="@null"
+        android:drawableLeft="@drawable/ic_play"
+        android:paddingStart="30dp"
+        android:paddingEnd="50dp"
+        android:text="Return"
+        android:textColor="@color/md_theme_light_background"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

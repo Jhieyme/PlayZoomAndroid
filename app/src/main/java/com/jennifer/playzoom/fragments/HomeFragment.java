@@ -28,27 +28,24 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         RVResumeAdapter adapter  = new RVResumeAdapter(getData());
         binding.rvMoviesResume.setAdapter(adapter);
+        //LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.rvMoviesResume.setLayoutManager(layoutManager);
     }
-
-
     private List<Shows> getData(){
         List<Shows> shows = new ArrayList<>();
-        shows.add(new Series("WandaVision", "https://assets-prd.ignimgs.com/2022/05/10/wandasgrief-oneup-1652213876179.jpg", 2));
+        shows.add(new Series("WandaVision", "https://assets-prd.ignimgs.com/2022/05/10/wandasgrief-oneup-1652213876179.jpg", 1));
         shows.add(new Series("Star Wars: Rebelds", "https://musingsonthem49.files.wordpress.com/2015/09/sw-rebels_tsol_poster.jpg", 3));
         shows.add(new Movie("Avengers", "https://img.ecartelera.com/img/35400/35493_nuevo-banner-con-los-vengadores.jpg", "Infinite Saga"));
         shows.add(new Movie("Barbie", "https://static.euronews.com/articles/stories/07/51/45/54/1440x810_cmsv2_d794baf9-5913-5e00-ab52-461ab3b4b56f-7514554.jpg", ""));
