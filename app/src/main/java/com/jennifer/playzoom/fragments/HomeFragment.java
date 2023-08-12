@@ -40,7 +40,6 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         RVResumeAdapter adapter  = new RVResumeAdapter(getData());
         binding.rvMoviesResume.setAdapter(adapter);
-        //LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.VERTICAL, false);
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.rvMoviesResume.setLayoutManager(layoutManager);
         RetrofitHelper.getService().getShows().enqueue(new Callback<ShowResponse>() {
