@@ -35,7 +35,7 @@
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,30 +51,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_shows"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2" />
         </LinearLayout>
 
     </ScrollView>
-
-    <Button
-        android:id="@+id/button_with_icon"
-        android:layout_width="180dp"
-        android:layout_height="49dp"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:contentDescription="@null"
-        android:drawableLeft="@drawable/ic_play"
-        android:paddingStart="30dp"
-        android:paddingEnd="50dp"
-        android:text="Return"
-        android:textColor="@color/md_theme_light_background"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.0" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
