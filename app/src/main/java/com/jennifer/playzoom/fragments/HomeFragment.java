@@ -1,6 +1,7 @@
 package com.jennifer.playzoom.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.jennifer.playzoom.data.response.ShowResponse;
@@ -24,10 +26,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
 public class HomeFragment extends Fragment {
-
     private FragmentHomeBinding binding;
+    private HomeViewModel homeViewModel;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        homeViewModel = ViewModelProvider.AndroidViewModelFactory.getInstance(getActivity().getApplication()).create(HomeViewModel.class);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,11 +62,19 @@ public class HomeFragment extends Fragment {
 
             }
         });
-        
+        homeViewModel.listLiveData.observe(requireActivity(), showList ->{
+            //Mostrar en recycler
+            for(int i = 0 ; i<showList.size(); i++){
+                Log.d("Peliculas", showList.get(i).getName());
+            }
+        });
+        homeViewModel.getShows();
     }
 
     private void showMovies(List<Shows> showsList) {
-        RVShowAdapter adapter = new RVShowAdapter(showsList);
+        RVShowAdapter adapter = new RVShowAdapter(showsList, show -> {
+            homeViewModel.addShow(show);
+        });
         binding.rvShows.setAdapter(adapter);
     }
 

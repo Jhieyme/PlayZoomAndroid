@@ -38,8 +38,8 @@
     <Button
         android:id="@+id/btn_get_started"
         style="@style/ThemeOverlay.Material3.Button.TonalButton"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
+        android:layout_width="320dp"
+        android:layout_height="77dp"
         android:layout_marginHorizontal="42dp"
         android:layout_marginBottom="42dp"
         android:padding="16dp"

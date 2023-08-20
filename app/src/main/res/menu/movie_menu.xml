@@ -13,4 +13,9 @@
         android:title="Settings"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title="Settings"
+        app:showAsAction="ifRoom"/>
+
 </menu>

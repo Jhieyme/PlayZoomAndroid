@@ -15,9 +15,11 @@ import java.util.List;
 public class RVShowAdapter extends RecyclerView.Adapter<RVShowAdapter.ShowViewHolder> {
 
     private List<Shows> shows;
+    private FavoriteClick favoriteClick;
 
-    public RVShowAdapter(List<Shows> shows){
+    public RVShowAdapter(List<Shows> shows, FavoriteClick favoriteClick){
         this.shows = shows;
+        this.favoriteClick = favoriteClick;
     }
 
     @NonNull
@@ -46,7 +48,16 @@ public class RVShowAdapter extends RecyclerView.Adapter<RVShowAdapter.ShowViewHo
 
         public void bind(Shows shows) {
             binding.txtName.setText(shows.getName());
+            binding.btnFavorite.setOnClickListener(v -> {
+                favoriteClick.onClick(shows);
+            });
             Glide.with(itemView.getContext()).load(shows.getImgUrl()).into(binding.imgShow);
         }
     }
+
+    public interface FavoriteClick{
+        public void onClick(Shows shows);
+    }
 }
+
+
