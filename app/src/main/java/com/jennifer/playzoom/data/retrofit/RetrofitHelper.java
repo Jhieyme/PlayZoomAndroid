@@ -9,7 +9,6 @@ public final class RetrofitHelper {
     public static Retrofit instance;
     public static MoviesInterface service;
 
-    // https://run.mocky.io/v3/975c7c92-d410-4199-a0ae-ff1790e2b9cf
     public  static Retrofit getInstance(){
         if (instance == null){
             Retrofit retrofit = new Retrofit.Builder()
