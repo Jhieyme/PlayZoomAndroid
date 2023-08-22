@@ -65,7 +65,7 @@ public class HomeFragment extends Fragment {
         homeViewModel.listLiveData.observe(requireActivity(), showList ->{
             //Mostrar en recycler
             for(int i = 0 ; i<showList.size(); i++){
-                Log.d("Peliculas", showList.get(i).getName());
+                Log.d("shows", showList.get(i).getName());
             }
         });
         homeViewModel.getShows();

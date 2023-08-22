@@ -46,7 +46,6 @@ public class PrincipalActivity extends AppCompatActivity {
         binding.txtEmail.setText(email);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.movie_menu, menu);

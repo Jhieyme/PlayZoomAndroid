@@ -19,7 +19,7 @@ public interface ShowDao {
     @Query("SELECT * FROM show WHERE show_name LIKE :name LIMIT 1")
     public ShowEntity getShowByName(String name);
 
-    @Query("SELECT * FROM show WHERE show_name")
+    @Query("SELECT * FROM show ")
     public LiveData<List<ShowEntity>> getAll();
 
     @Delete
